@@ -16,4 +16,8 @@ app.use(express.static("public"));
 
 // routes import
 
+import urlRouter from "./routes/url.routes.js";
+
+app.use("/api/v1/urls", urlRouter);
+
 export { app };
