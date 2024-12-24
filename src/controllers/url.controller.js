@@ -43,6 +43,7 @@ const CompressUrl = asyncHandler(async (req, res) => {
       originalUrl: originalUrl.trim(),
     }).select("-__v");
     if (existingUrl) {
+      await redis.set(cacheKey, JSON.stringify(existingUrl), "EX", 3600);
       return res
         .status(200)
         .json(new ApiResponse(200, "Existing URL fetched", existingUrl));
