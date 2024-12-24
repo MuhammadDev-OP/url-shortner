@@ -1,8 +1,13 @@
 import { Router } from "express";
-import { CompressUrl } from "../controllers/compressUrl.controller.js";
+import {
+  CompressUrl,
+  redirectShortUrl,
+} from "../controllers/url.controller.js";
 
 const router = Router();
 
-router.route("/compressUrl").post(CompressUrl);
+router.post("/compressUrl", CompressUrl);
+
+router.get("/:short_id", redirectShortUrl);
 
 export default router;
