@@ -1,27 +1,52 @@
-📝 Setup and Installation
-Follow these steps to set up the project:
+# URL Shortener Service
 
-Clone the repository:
+The **URL Shortener** service is a Node.js-based web application that allows users to shorten long URLs into compact, shareable links. The service also supports redirection from the short URL to the original URL. The system leverages **Redis** for caching to ensure optimized response times, high performance, and scalability. Error handling and validation mechanisms are integrated to enhance reliability and robustness.
 
-bash
-Copy code
-git clone https://github.com/yourusername/url-shortener.git
-cd url-shortener
-Install dependencies:
+---
 
-bash
-Copy code
-npm install
-Set up environment variables: Create a .env file in the root directory and add:
+## 📋 Description
 
-env
-Copy code
-BASE_URL=http://localhost:8080
-MONGO_URI=your_mongo_database_uri
-REDIS_URI=your_redis_instance_uri
-Run the application:
+This project provides URL shortening functionality using:
+- **Node.js** and **Express.js** for server-side logic.
+- **Redis** for caching frequently accessed data.
+- **MongoDB** for persistent data storage.
 
-bash
-Copy code
-npm run dev
-Test the endpoints: Use Postman or cURL to interact with the API.
+---
+
+## 📐 Architecture Diagram
+
+*(Insert or link the architecture diagram here.)*
+
+---
+
+## 📂 Design Structure
+
+The application uses the **MVC (Model-View-Controller)** design pattern for modularity and scalability:
+
+1. **Model**: 
+   - Schema for storing URLs (`Urls` schema).
+2. **Controller**: 
+   - Handles core logic, request validation, and responses.
+3. **View**: 
+   - Not applicable (REST API).
+4. **Utilities**:
+   - Error handling (`ApiError` and `ApiResponse` utilities).
+   - Redis integration for caching.
+
+---
+
+## 🚀 API Documentation
+
+### 1. **POST**: Compress URL  
+**Endpoint**: `/api/urls/compressUrl`  
+**Description**: Shortens the original URL.
+
+#### Request
+**Headers**:  
+- Content-Type: `application/json`
+
+**Body**:  
+```json
+{
+    "originalUrl": "https://openai.com"
+}
