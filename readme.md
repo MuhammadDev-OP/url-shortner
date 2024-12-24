@@ -13,40 +13,33 @@ This project provides URL shortening functionality using:
 
 ---
 
-## 📐 Architecture Diagram
+# URL Shortener Project
 
-*(Insert or link the architecture diagram here.)*
+## 🚀 Getting Started
 
----
+### Clone the Repository
+To get started with the project, first clone the repository to your local machine:
 
-## 📂 Design Structure
+```bash
+git clone https://github.com/yourusername/url-shortener.git
+cd url-shortener
+Install Dependencies
+Install the necessary dependencies using npm:
 
-The application uses the **MVC (Model-View-Controller)** design pattern for modularity and scalability:
+bash
+Copy code
+npm install
+Configure Environment
+Create a .env file in the root directory of the project and add the following environment variables:
 
-1. **Model**: 
-   - Schema for storing URLs (`Urls` schema).
-2. **Controller**: 
-   - Handles core logic, request validation, and responses.
-3. **View**: 
-   - Not applicable (REST API).
-4. **Utilities**:
-   - Error handling (`ApiError` and `ApiResponse` utilities).
-   - Redis integration for caching.
+env
+Copy code
+BASE_URL=http://localhost:8080
+MONGO_URI=your_mongo_database_uri
+REDIS_URI=your_redis_instance_uri
+Start the Server
+Once your environment variables are configured, start the development server:
 
----
-
-## 🚀 API Documentation
-
-### 1. **POST**: Compress URL  
-**Endpoint**: `/api/urls/compressUrl`  
-**Description**: Shortens the original URL.
-
-#### Request
-**Headers**:  
-- Content-Type: `application/json`
-
-**Body**:  
-```json
-{
-    "originalUrl": "https://openai.com"
-}
+bash
+Copy code
+npm run dev
