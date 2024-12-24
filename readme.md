@@ -25,7 +25,7 @@ npm install
 
 ### Environment Setup
 
-Create a `.env` file in the root directory with the following configurations:
+Create a `.env` (All credentials are given in the Documentation pdf) file in the root directory with the following configurations:
 
 ```env
 BASE_URL=http://localhost:8080
@@ -59,7 +59,7 @@ The application uses the MVC (Model-View-Controller) design pattern:
 Request body:
 ```json
 {
-    "originalUrl": "https://openai.com"
+    "originalUrl": "https://codinito.com"
 }
 ```
 
