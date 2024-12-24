@@ -1,11 +1,8 @@
 import mongoose from "mongoose";
-import { DB_CRED } from "../constant.js";
 
 const connectDB = async () => {
   try {
-    const connectInst = await mongoose.connect(
-      `${process.env.MONGODB_URI}/${DB_CRED}`
-    );
+    const connectInst = await mongoose.connect(process.env.MONGODB_URI);
     console.log(
       `\n MongoDB connected !! DB HOST: ${connectInst.connection.host}`
     );

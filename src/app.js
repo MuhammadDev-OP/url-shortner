@@ -18,6 +18,8 @@ app.use(express.static("public"));
 
 import urlRouter from "./routes/url.routes.js";
 
-app.use("/api/v1/urls", urlRouter);
+// app.use("/api/v1/urls", urlRouter);
+
+app.use("/api/urls", urlRouter);
 
 export { app };
